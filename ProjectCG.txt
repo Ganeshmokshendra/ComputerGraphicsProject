@@ -1,0 +1,2374 @@
+#include <stdio.h>
+#include <math.h>
+#include <GL/glut.h>
+//#include "stdlib.h"
+//#include <stdlib.h>
+GLfloat a=0,b=0,c=0,d=0,e=0;
+int n=1;
+int n1=1;
+void *currentfont;
+void frontscreen(void);
+void frontscreen1(void);
+void light1(float,float,float,int);
+float xr=0,yr=0;
+void smallufo();
+void display2();
+void display3();
+void display4();
+void display5();
+void display6();
+void ufo();
+void star1();
+void alien();
+void mykeys(unsigned char key,int x,int y);
+void mymouse(int btn,int state,int x,int y);
+void earth(float,float,float,int);
+void clouds();
+void tree();
+float PI = 3.14;
+float x,y;
+float radius=3.0;
+float centerX=11.0, centerY=7.0;
+float step=5.0;
+
+void update(int value) 
+{ 
+	c-=0.2; //make the ufo land on earth 
+	glutTimerFunc(350,update,0);//delay 
+	glutPostRedisplay(); 
+} 
+
+
+void star1()
+{
+	glColor3f(1.000, 0.973, 0.863); //cornsilk
+	glPointSize(3.0);
+	glBegin(GL_POINTS);
+		glVertex2f(10,10);
+		glVertex2f(30,20);
+		glVertex2f(50,30);
+		glVertex2f(70,20);
+		glVertex2f(100,40);
+		glVertex2f(130,20);
+		glVertex2f(160,50);
+		glVertex2f(200,20);
+		glVertex2f(250,30);
+		glVertex2f(280,20);
+		glVertex2f(300,20);
+		glVertex2f(350,40);
+		glVertex2f(390,20);
+		glVertex2f(410,60);
+		glVertex2f(450,40);
+		glVertex2f(490,50);
+		glVertex2f(520,20);
+		glVertex2f(550,20);
+		glVertex2f(570,30);
+		glVertex2f(600,70);
+		glVertex2f(640,40);
+		glVertex2f(690,20);
+		glVertex2f(720,20);
+		glVertex2f(780,50);
+		glVertex2f(820,20);
+		glVertex2f(860,30);
+		glVertex2f(900,70);
+		glVertex2f(950,20);
+		glVertex2f(1000,20);
+
+		glVertex2f(10,80);
+		glVertex2f(30,70);
+		glVertex2f(50,100);
+		glVertex2f(70,150);
+		glVertex2f(100,80);
+		glVertex2f(130,80);
+		glVertex2f(160,100);
+		glVertex2f(200,80);
+		glVertex2f(250,70);
+		glVertex2f(280,80);
+		glVertex2f(300,120);
+		glVertex2f(350,160);
+		glVertex2f(390,60);
+		glVertex2f(410,80);
+		glVertex2f(450,80);
+		glVertex2f(490,70);
+		glVertex2f(520,110);
+		glVertex2f(550,80);
+		glVertex2f(570,70);
+		glVertex2f(600,100);
+		glVertex2f(640,80);
+		glVertex2f(690,70);
+		glVertex2f(720,160);
+		glVertex2f(780,140);
+		glVertex2f(820,120);
+		glVertex2f(860,80);
+		glVertex2f(900,80);
+		glVertex2f(950,100);
+		glVertex2f(1000,90);
+
+		glVertex2f(10,150);
+		glVertex2f(30,170);
+		glVertex2f(50,180);
+		glVertex2f(70,140);
+		glVertex2f(100,190);
+		glVertex2f(130,120);
+		glVertex2f(160,100);
+		glVertex2f(200,140);
+		glVertex2f(250,180);
+		glVertex2f(280,190);
+		glVertex2f(300,110);
+		glVertex2f(350,200);
+		glVertex2f(390,170);
+		glVertex2f(410,130);
+		glVertex2f(450,220);
+		glVertex2f(490,170);
+		glVertex2f(520,180);
+		glVertex2f(550,190);
+		glVertex2f(570,140);
+		glVertex2f(600,160);
+		glVertex2f(640,180);
+		glVertex2f(690,170);
+		glVertex2f(720,150);
+		glVertex2f(780,120);
+		glVertex2f(820,190);
+		glVertex2f(860,140);
+		glVertex2f(900,190);
+		glVertex2f(950,180);
+		glVertex2f(1000,180);
+
+		glVertex2f(10,260);
+		glVertex2f(30,240);
+		glVertex2f(50,260);
+		glVertex2f(70,250);
+		glVertex2f(100,220);
+		glVertex2f(130,240);
+		glVertex2f(160,200);
+		glVertex2f(200,260);
+		glVertex2f(250,250);
+		glVertex2f(280,260);
+		glVertex2f(300,240);
+		glVertex2f(350,260);
+		glVertex2f(390,250);
+		glVertex2f(410,260);
+		glVertex2f(450,220);
+		glVertex2f(490,260);
+		glVertex2f(520,200);
+		glVertex2f(550,240);
+		glVertex2f(570,260);
+		glVertex2f(600,250);
+		glVertex2f(640,260);
+		glVertex2f(690,220);
+		glVertex2f(720,240);
+		glVertex2f(780,200);
+		glVertex2f(820,260);
+		glVertex2f(860,250);
+		glVertex2f(900,270);
+		glVertex2f(950,250);
+		glVertex2f(1000,260);
+
+		glVertex2f(10,340);
+		glVertex2f(30,320);
+		glVertex2f(50,340);
+		glVertex2f(70,350);
+		glVertex2f(100,300);
+		glVertex2f(130,340);
+		glVertex2f(160,330);
+		glVertex2f(200,340);
+		glVertex2f(250,310);
+		glVertex2f(280,350);
+		glVertex2f(300,340);
+		glVertex2f(350,300);
+		glVertex2f(390,360);
+		glVertex2f(410,340);
+		glVertex2f(450,310);
+		glVertex2f(490,340);
+		glVertex2f(520,300);
+		glVertex2f(550,340);
+		glVertex2f(570,350);
+		glVertex2f(600,340);
+		glVertex2f(640,360);
+		glVertex2f(690,340);
+		glVertex2f(720,320);
+		glVertex2f(780,350);
+		glVertex2f(820,340);
+		glVertex2f(860,300);
+		glVertex2f(900,340);
+		glVertex2f(950,360);
+		glVertex2f(1000,330);
+
+		glVertex2f(10,420);
+		glVertex2f(30,410);
+		glVertex2f(50,430);
+		glVertex2f(70,400);
+		glVertex2f(100,380);
+		glVertex2f(130,420);
+		glVertex2f(160,390);
+		glVertex2f(200,410);
+		glVertex2f(250,370);
+		glVertex2f(280,430);
+		glVertex2f(300,380);
+		glVertex2f(350,450);
+		glVertex2f(390,390);
+		glVertex2f(410,420);
+		glVertex2f(450,360);
+		glVertex2f(490,420);
+		glVertex2f(520,390);
+		glVertex2f(550,410);
+		glVertex2f(570,380);
+		glVertex2f(600,420);
+		glVertex2f(640,430);
+		glVertex2f(690,390);
+		glVertex2f(720,420);
+		glVertex2f(780,400);
+		glVertex2f(820,430);
+		glVertex2f(860,420);
+		glVertex2f(900,410);
+		glVertex2f(950,420);
+		glVertex2f(1000,430);
+
+		glVertex2f(10,490);
+		glVertex2f(30,400);
+		glVertex2f(50,450);
+		glVertex2f(70,420);
+		glVertex2f(100,480);
+		glVertex2f(130,410);
+		glVertex2f(160,440);
+		glVertex2f(200,490);
+		glVertex2f(250,460);
+		glVertex2f(280,430);
+		glVertex2f(300,490);
+		glVertex2f(350,480);
+		glVertex2f(390,450);
+		glVertex2f(410,470);
+		glVertex2f(450,490);
+		glVertex2f(490,410);
+		glVertex2f(520,480);
+		glVertex2f(550,490);
+		glVertex2f(570,450);
+		glVertex2f(600,410);
+		glVertex2f(640,490);
+		glVertex2f(690,460);
+		glVertex2f(720,490);
+		glVertex2f(780,470);
+		glVertex2f(820,490);
+		glVertex2f(860,450);
+		glVertex2f(900,420);
+		glVertex2f(950,470);
+		glVertex2f(1000,490);
+
+		/*glVertex2f(60,250);
+		glVertex2f(70,150);
+		glVertex2f(100,100);
+		glVertex2f(100,100);
+		glVertex2f(100,100);
+		glVertex2f(100,100);
+		glVertex2f(100,100);
+		glVertex2f(100,100);
+		glVertex2f(100,100);
+		glVertex2f(100,100);
+		glVertex2f(100,100);
+		glVertex2f(100,100);
+		glVertex2f(100,100);
+		glVertex2f(100,100);*/
+	glEnd();
+}
+
+void mykeys(unsigned char key,int x,int y)
+{
+	switch(key)
+	{
+	
+	case 'w':			yr++;
+						glutPostRedisplay();
+						break;
+	case 's':			yr--;
+						glutPostRedisplay();
+						break;
+	case 'a':			xr--;
+						glutPostRedisplay();
+						break;
+	case 'd':			xr++;
+						glutPostRedisplay();
+						break;
+	case 'e' :    yr++;xr++;
+						glutPostRedisplay();
+						break;
+	case 'c' :    yr--;xr++;
+						glutPostRedisplay();
+						break;
+	case 'z' :    yr--;xr--;
+						glutPostRedisplay();
+						break;
+	case 'q' :    yr++;xr--;
+						glutPostRedisplay();
+						break;
+	
+	case 'p' :			n=0;
+						glutPostRedisplay();
+						break;
+
+	case 'n' : n1=0;
+				glutPostRedisplay();
+				break;
+	}
+}
+
+void light1(float cx, float cy, float r, int num_segments)
+{
+	glColor3f(0.275, 0.510, 0.706);
+    glBegin(GL_TRIANGLE_FAN);
+    for(int ii = 0; ii < num_segments; ii++)
+    {
+        float theta = 2.0f * 3.1415926f * float(ii) / float(num_segments);//get the current angle
+
+        float x = r * cosf(theta);//calculate the x component
+        float y = r * sinf(theta);//calculate the y component
+
+        glVertex2f(x + cx, y + cy);//output vertex
+
+    }
+    glEnd();
+}
+
+void earth(float cx, float cy, float r, int num_segments)
+{
+	glColor3f(0.000, 0.000, 0.804);
+    glBegin(GL_TRIANGLE_FAN);
+    for(int ii = 0; ii < num_segments; ii++)
+    {
+        float theta = 2.0f * 3.1415926f * float(ii) / float(num_segments);//get the current angle
+
+        float x = r * cosf(theta);//calculate the x component
+        float y = r * sinf(theta);//calculate the y component
+
+        glVertex2f(x + cx, y + cy);//output vertex
+
+    }
+    glEnd();
+	
+	
+	glPushMatrix();
+	glScalef(0.3,0.3,0.0);
+	glTranslatef(1435.0,610.0,0.0);
+	
+	glColor3f(0.0,1.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(650.0,350.0);
+		glVertex2f(540.0,380.0);
+		glVertex2f(490.0,450.0);
+		glVertex2f(560.0,485.0);
+		glVertex2f(700.0,510.0);
+		glVertex2f(800.0,470.0);
+		glVertex2f(950.0,450.0);
+		glVertex2f(870.0,350.0);
+	glEnd();
+	glPopMatrix();
+
+	glPushMatrix();
+	glLoadIdentity();
+	//glRotatef(50.0,1.0,0.0,0.0);
+	glScalef(0.3,0.3,0.0);
+	glTranslatef(1520.0,910.0,0.0);
+	
+	glColor3f(0.0,1.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(650.0,350.0);
+		glVertex2f(540.0,380.0);
+		glVertex2f(490.0,450.0);
+		glVertex2f(560.0,485.0);
+		glVertex2f(700.0,510.0);
+		glVertex2f(800.0,470.0);
+		
+		glVertex2f(870.0,350.0);
+	glEnd();
+	glPopMatrix();
+
+
+	
+	
+}
+
+void mymouse(int btn,int state,int x,int y)
+{
+	if(btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+	{
+		glClear(GL_COLOR_BUFFER_BIT);
+		glutDisplayFunc(display5);
+		glutSwapBuffers();
+		glutPostRedisplay();
+	}
+	if(btn == GLUT_RIGHT_BUTTON && state == GLUT_DOWN)
+	{
+		glClear(GL_COLOR_BUFFER_BIT);
+		glutDisplayFunc(display6);
+		glutSwapBuffers();
+		glutPostRedisplay();
+	}
+
+}
+
+void clouds(float cx, float cy, float r, int num_segments)
+{
+	glColor3f(0.690, 0.878, 0.902);
+    glBegin(GL_TRIANGLE_FAN);
+    for(int ii = 0; ii < num_segments; ii++)
+    {
+        float theta = 2.0f * 3.1415926f * float(ii) / float(num_segments);//get the current angle
+
+        float x = r * cosf(theta);//calculate the x component
+        float y = r * sinf(theta);//calculate the y component
+
+        glVertex2f(x + cx, y + cy);//output vertex
+
+    }
+    glEnd();
+}
+
+void ufo()
+{
+	glScalef(0.4,0.4,0.0);
+	glTranslatef(-1200.0,0.0,0.0);
+	glColor3f(0.184, 0.310, 0.310); //ufo base 
+	glBegin(GL_POLYGON);
+		glVertex2f(125.0+(10*xr),25.0+(10*yr));
+		glVertex2f(125.0+(10*xr),37.5+(10*yr));
+		glVertex2f(350.0+(10*xr),37.5+(10*yr));
+		glVertex2f(350.0+(10*xr),25.0+(10*yr));
+	glEnd();
+
+
+	glColor3f(0.502, 0.502, 0.502);			//ufo body1 above the base
+	glBegin(GL_QUADS);
+		glVertex2f(125.0+(10*xr),37.5+(10*yr));
+		glVertex2f(75.0+(10*xr),125.0+(10*yr));
+		glVertex2f(400.0+(10*xr),125.0+(10*yr));
+		glVertex2f(350.0+(10*xr),37.5+(10*yr));
+	glEnd();
+
+	//the doors with black color on the ufo
+	glColor3f(0.184, 0.310, 0.310);
+	glBegin(GL_QUADS);
+		glVertex2f(125.0+(10*xr),50.0+(10*yr));
+		glVertex2f(87.5+(10*xr),112.5+(10*yr));
+		glVertex2f(150.0+(10*xr),112.5+(10*yr));
+		glVertex2f(187.5+(10*xr),50.0+(10*yr));
+	glEnd();
+	glBegin(GL_QUADS);
+		glVertex2f(200.0+(10*xr),50.0+(10*yr));
+		glVertex2f(162.5+(10*xr),112.5+(10*yr));
+		glVertex2f(312.5+(10*xr),112.5+(10*yr));
+		glVertex2f(275.0+(10*xr),50.0+(10*yr));
+	glEnd();
+	glBegin(GL_QUADS);
+		glVertex2f(287.5+(10*xr),50.0+(10*yr));
+		glVertex2f(325.0+(10*xr),112.5+(10*yr));
+		glVertex2f(387.5+(10*xr),112.5+(10*yr));
+		glVertex2f(350.0+(10*xr),50.0+(10*yr));
+	glEnd();
+	// doors end 
+	
+	glColor3f(0.863, 0.863, 0.863);			//ufo body2 above the body1
+	glBegin(GL_QUADS);
+		glVertex2f(75.0+(10*xr),125.0+(10*yr));
+		glVertex2f(125.0+(10*xr),175.0+(10*yr));
+		glVertex2f(350.0+(10*xr),175.0+(10*yr));
+		glVertex2f(400.0+(10*xr),125.0+(10*yr));
+	glEnd();
+
+	//semicircle of the ufo
+	float PI = 3.14;
+	float x,y;
+	float radius=112.5;
+	float centerX=237.5, centerY=175.0;
+ float step=5.0;// How far is the next point i.e it should be small value
+ glColor3f(0.686, 0.933, 0.933);
+ glBegin(GL_POLYGON);
+ for(float angle=0.0f;angle<=180; angle+=step)
+ {
+    float rad  = PI*angle/180;
+   x  = centerX+radius*cos(rad);
+   y  = centerY+radius*sin(rad);
+   glVertex2f(x+(10*xr),y+(10*yr));
+
+}
+glEnd();
+
+	light1(125.0+(10*xr),150.0+(10*yr),12.5,20);
+	light1(162.5+(10*xr),150.0+(10*yr),12.5,20);
+	light1(200.0+(10*xr),150.0+(10*yr),12.5,20);
+	light1(237.5+(10*xr),150.0+(10*yr),12.5,20);
+	light1(275.5+(10*xr),150.0+(10*yr),12.5,20);
+	light1(312.5+(10*xr),150.0+(10*yr),12.5,20);
+	light1(350.0+(10*xr),150.0+(10*yr),12.5,20);
+
+	if(((400.0+(10*xr)>=700)&&(125.0+(10*yr))>=800))
+		display3();
+	glutSwapBuffers();
+	
+}
+
+void smallufo() //ufo base
+{      
+
+	glScalef(6.0, 6.0, 0.0);
+
+	glColor3f(0.184, 0.310, 0.310); //ufo base 
+	glBegin(GL_POLYGON);
+		glVertex2f(7.5+xr,1.5+yr);
+		glVertex2f(7.5+xr,2.0+yr);
+		glVertex2f(14.5+xr,2.0+yr);
+		glVertex2f(14.5+xr,1.5+yr);
+	glEnd();
+
+
+	glColor3f(0.502, 0.502, 0.502);			//ufo body1 above the base
+	glBegin(GL_QUADS);
+		glVertex2f(7.5+xr,2.0+yr);
+		glVertex2f(6.0+xr,5.0+yr);
+		glVertex2f(16.0+xr,5.0+yr);
+		glVertex2f(14.5+xr,2.0+yr);
+	glEnd();
+
+	/* the doors with black color on the ufo*/
+	glColor3f(0.184, 0.310, 0.310);
+	glBegin(GL_QUADS);
+		glVertex2f(7.5+xr,2.5+yr);
+		glVertex2f(6.5+xr,4.5+yr);
+		glVertex2f(8.5+xr,4.5+yr);
+		glVertex2f(9.5+xr,2.5+yr);
+	glEnd();
+	glBegin(GL_QUADS);
+		glVertex2f(10.0+xr,2.5+yr);
+		glVertex2f(9.0+xr,4.5+yr);
+		glVertex2f(13.0+xr,4.5+yr);
+		glVertex2f(12.0+xr,2.5+yr);
+	glEnd();
+	glBegin(GL_QUADS);
+		glVertex2f(12.5+xr,2.5+yr);
+		glVertex2f(13.5+xr,4.5+yr);
+		glVertex2f(15.5+xr,4.5+yr);
+		glVertex2f(14.5+xr,2.5+yr);
+	glEnd();
+
+	/* doors end */
+
+
+		
+	glColor3f(0.863, 0.863, 0.863);			//ufo body2 above the body1
+	glBegin(GL_QUADS);
+		glVertex2f(6.0+xr,5.0+yr);
+		glVertex2f(8.0+xr,7.0+yr);
+		glVertex2f(14.0+xr,7.0+yr);
+		glVertex2f(16.0+xr,5.0+yr);
+	glEnd();
+	
+	//semicircle of the ufo
+	float PI = 3.14;
+	float x,y;
+	float radius=3.0;
+	float centerX=11.0, centerY=7.0;
+ float step=5.0;// How far is the next point i.e it should be small value
+ glColor3f(0.686, 0.933, 0.933);
+ glBegin(GL_POLYGON);
+ for(float angle=0.0f;angle<=180; angle+=step)
+ {
+    float rad  = PI*angle/180;
+   x  = centerX+radius*cos(rad);
+   y  = centerY+radius*sin(rad);
+   glVertex2f(x+xr,y+yr);
+
+}
+glEnd();
+
+	light1(8.0+xr,6.0+yr,0.5,20);
+	light1(9.5+xr,6.0+yr,0.5,20);
+	light1(11.0+xr,6.0+yr,0.5,20);
+	light1(12.5+xr,6.0+yr,0.5,20);
+	light1(14.0+xr,6.0+yr,0.5,20);
+
+
+	if((16.0+xr)>=140)
+		display2();
+	glutSwapBuffers();
+	
+}
+
+void display()
+{	
+	
+	glClear(GL_COLOR_BUFFER_BIT);
+	
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	//glClearColor(0.184, 0.310, 0.310,1.0);
+	if(n==1)
+		frontscreen();
+	if(n==0)
+	{
+
+		if(n1==1)
+		frontscreen1();
+		if(n1==0)
+		{
+			star1();
+			smallufo();
+		}
+	}
+	glFlush();
+	glutSwapBuffers();
+	
+}
+
+void display2()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	star1();
+	//fog(650.0,350.0,120.0,40.0);
+	earth(650.0,350.0,80.0,40);
+	
+	ufo();
+	glFlush();
+	//glutMouseFunc(mouse);
+}
+
+void display3() 
+{ 
+	
+	glClear(GL_COLOR_BUFFER_BIT);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	glClearColor(0.941, 0.973, 1.000,1.0);
+
+	clouds(650,450,40.0,40);
+	clouds(700,450,40.0,40);
+	clouds(750,450,40.0,40);
+	clouds(800,450,40.0,40);
+
+	clouds(50,400,40.0,40);
+	clouds(100,400,40.0,40);
+	clouds(150,400,40.0,40);
+	clouds(200,400,40.0,40);
+
+	clouds(200,270,40.0,40);
+	clouds(250,270,40.0,40);
+	clouds(300,270,40.0,40);
+	clouds(350,270,40.0,40);
+
+	clouds(500,200,40.0,40);
+	clouds(550,200,40.0,40);
+	clouds(600,200,40.0,40);
+	clouds(650,200,40.0,40);
+
+	clouds(0,20,40.0,40);
+	clouds(50,20,40.0,40);
+	clouds(100,20,40.0,40);
+	clouds(150,20,40.0,40);
+
+	clouds(50,150,25.0,40);
+	clouds(80,150,25.0,40);
+	clouds(110,150,25.0,40);
+	clouds(140,150,25.0,40);
+
+	clouds(600,50,25.0,40);
+	clouds(630,50,25.0,40);
+	clouds(660,50,25.0,40);
+	clouds(690,50,25.0,40);
+	
+	glScalef(0.4,0.4,0.0);
+	glTranslatef(750.0,1100.0,0.0);
+
+	glPushMatrix(); 
+	glTranslated(0.0,c,0.0); 
+	glColor3f(0.184, 0.310, 0.310); //ufo base 
+	glBegin(GL_POLYGON);
+		glVertex2f(125.0,25.0);
+		glVertex2f(125.0,37.5);
+		glVertex2f(350.0,37.5);
+		glVertex2f(350.0,25.0);
+	glEnd();
+	glPopMatrix();
+	
+	glPushMatrix(); 
+	glTranslated(0.0,c,0.0); 
+	glColor3f(1.0,1.0,0.0);			//the lights of the ufo
+	glBegin(GL_POLYGON);
+		glVertex2f(217.5,25.0);
+		glVertex2f(181.0,-190.0);
+		glVertex2f(293.0,-190.0);
+		glVertex2f(257.5,25.0);
+	glEnd();
+	glPopMatrix();
+
+
+	glPushMatrix(); 
+	glTranslated(0.0,c,0.0);
+	glColor3f(0.502, 0.502, 0.502);			//ufo body1 above the base
+	glBegin(GL_QUADS);
+		glVertex2f(125.0,37.5);
+		glVertex2f(75.0,125.0);
+		glVertex2f(400.0,125.0);
+		glVertex2f(350.0,37.5);
+	glEnd();
+	glPopMatrix();
+
+	//the doors with black color on the ufo
+	glPushMatrix(); 
+	glTranslated(0.0,c,0.0);
+	glColor3f(0.184, 0.310, 0.310);
+	glBegin(GL_QUADS);
+		glVertex2f(125.0,50.0);
+		glVertex2f(87.5,112.5);
+		glVertex2f(150.0,112.5);
+		glVertex2f(187.5,50.0);
+	glEnd();
+	glBegin(GL_QUADS);
+		glVertex2f(200.0,50.0);
+		glVertex2f(162.5,112.5);
+		glVertex2f(312.5,112.5);
+		glVertex2f(275.0,50.0);
+	glEnd();
+	glBegin(GL_QUADS);
+		glVertex2f(287.5,50.0);
+		glVertex2f(325.0,112.5);
+		glVertex2f(387.5,112.5);
+		glVertex2f(350.0,50.0);
+	glEnd();
+	glPopMatrix();
+	// doors end 
+	glPushMatrix(); 
+	glTranslated(0.0,c,0.0);
+	glColor3f(0.863, 0.863, 0.863);			//ufo body2 above the body1
+	glBegin(GL_QUADS);
+		glVertex2f(75.0,125.0);
+		glVertex2f(125.0,175.0);
+		glVertex2f(350.0,175.0);
+		glVertex2f(400.0,125.0);
+	glEnd();
+	glPopMatrix();
+
+	//semicircle of the ufo
+	float PI = 3.14;
+	float x,y;
+	float radius=112.5;
+	float centerX=237.5, centerY=175.0;
+ float step=5.0;// How far is the next point i.e it should be small value
+ glPushMatrix(); 
+	glTranslated(0.0,c,0.0);
+	glColor3f(0.686, 0.933, 0.933);
+ glBegin(GL_POLYGON);
+ for(float angle=0.0f;angle<=180; angle+=step)
+ {
+    float rad  = PI*angle/180;
+   x  = centerX+radius*cos(rad);
+   y  = centerY+radius*sin(rad);
+   glVertex2f(x,y);
+
+}
+glEnd();
+glPopMatrix();
+glPushMatrix(); 
+	glTranslated(0.0,c,0.0);
+	light1(125.0,150.0,12.5,20);
+	light1(162.5,150.0,12.5,20);
+	light1(200.0,150.0,12.5,20);
+	light1(237.5,150.0,12.5,20);
+	light1(275.5,150.0,12.5,20);
+	light1(312.5,150.0,12.5,20);
+	light1(350.0,150.0,12.5,20);
+	glPopMatrix();
+
+	glutTimerFunc(350,update,0);
+	
+	if(c<=-1350.0)
+		display4();
+	
+	glFlush();
+	glutSwapBuffers();	
+}
+
+void tree()
+{
+	//tree 1 start
+	//bushes
+	glPushMatrix();
+	glColor3f(0.0,1.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(0,300);
+		glVertex2f(100,400);
+		glVertex2f(40,400);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(150,500);
+		glVertex2f(90,500);
+		glVertex2f(200,600);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(300,500);
+		glVertex2f(250,500);
+		glVertex2f(350,400);
+		glVertex2f(300,400);
+		glVertex2f(350,300);
+	glEnd();
+
+	//stem
+		glColor3f(0.2,0.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(150,0);
+//		glColor3f(0.47,0.0,0.0);
+		glVertex2f(150,300);
+	glColor3f(0.57,0.0,0.0);
+		glVertex2f(200,300);
+	glColor3f(0.47,0.0,0.0);
+		glVertex2f(200,0);
+	glEnd();
+	glPopMatrix();
+	//tree 1 end
+}
+
+void display4()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	//glClearColor(0.0,1.0,0.5,1.0);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+
+
+	glColor3f(0.196, 0.804, 0.196);		//grass on the earth.
+	glBegin(GL_POLYGON);
+		glVertex2f(0.0,0.0);
+		glVertex2f(1000.0,0.0);
+		glVertex2f(1000.0,300.0);
+		glVertex2f(0.0,300.0);
+	glEnd();
+
+	glColor3f(0.529, 0.808, 0.922);		//sky on the earth.
+	glBegin(GL_POLYGON);
+		glVertex2f(0.0,300.0);
+		glVertex2f(1000.0,300.0);
+		glVertex2f(1000.0,600.0);
+		glVertex2f(0.0,600.0);
+	glEnd();
+
+
+	//forest behind the ufo
+	glPushMatrix();
+	glTranslatef(-15.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(20.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(40.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(60.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(80.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(100.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(120.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(140.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(160.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(180.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(200.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(220.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(240.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(260.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(280.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(300.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(320.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(340.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(360.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(380.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(400.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(420.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(440.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(460.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(480.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(500.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(520.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(540.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(560.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(580.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(600.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(620.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(640.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(660.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(680.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(700.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(720.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(740.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(760.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(780.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(800.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+
+
+	//tree 1 start
+	//bushes
+	glPushMatrix();
+	glTranslatef(150.0,250.0,0.0);
+	glScalef(0.3,0.3,0.0);
+	glColor3f(0.0,1.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(0,300);
+		glVertex2f(100,400);
+		glVertex2f(40,400);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(150,500);
+		glVertex2f(90,500);
+		glVertex2f(200,600);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(300,500);
+		glVertex2f(250,500);
+		glVertex2f(350,400);
+		glVertex2f(300,400);
+		glVertex2f(350,300);
+	glEnd();
+
+	//stem
+		glColor3f(0.2,0.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(150,0);
+//		glColor3f(0.47,0.0,0.0);
+		glVertex2f(150,300);
+	glColor3f(0.57,0.0,0.0);
+		glVertex2f(200,300);
+	glColor3f(0.47,0.0,0.0);
+		glVertex2f(200,0);
+	glEnd();
+	glPopMatrix();
+	//tree 1 end
+
+
+	//tree 2 start
+	//bushes
+	glPushMatrix();
+	glTranslatef(650.0,250.0,0.0);
+	glScalef(0.3,0.3,0.0);
+	glColor3f(0.0,1.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(0,300);
+		glVertex2f(100,400);
+		glVertex2f(40,400);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(150,500);
+		glVertex2f(90,500);
+		glVertex2f(200,600);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(300,500);
+		glVertex2f(250,500);
+		glVertex2f(350,400);
+		glVertex2f(300,400);
+		glVertex2f(350,300);
+	glEnd();
+
+	//stem
+		glColor3f(0.2,0.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(150,0);
+//		glColor3f(0.47,0.0,0.0);
+		glVertex2f(150,300);
+	glColor3f(0.57,0.0,0.0);
+		glVertex2f(200,300);
+	glColor3f(0.47,0.0,0.0);
+		glVertex2f(200,0);
+	glEnd();
+	glPopMatrix();
+	//tree 2 end
+
+	
+
+    
+
+
+
+
+	glTranslated(150,100,0);
+	glColor3f(0.184, 0.310, 0.310); //ufo base 
+	glBegin(GL_POLYGON);
+		glVertex2f(125.0,25.0);
+		glVertex2f(125.0,37.5); 
+		glVertex2f(350.0,37.5);
+		glVertex2f(350.0,25.0);
+	glEnd();
+
+
+	glColor3f(0.502, 0.502, 0.502);			//ufo body1 above the base
+	glBegin(GL_QUADS);
+		glVertex2f(125.0,37.5);
+		glVertex2f(75.0,125.0);
+		glVertex2f(400.0,125.0);
+		glVertex2f(350.0,37.5);
+	glEnd();
+
+	//the doors with black color on the ufo
+	glColor3f(0.184, 0.310, 0.310);
+	glBegin(GL_QUADS);
+		glVertex2f(125.0,50.0);
+		glVertex2f(87.5,112.5);
+		glVertex2f(150.0,112.5);
+		glVertex2f(187.5,50.0);
+	glEnd();
+	glBegin(GL_QUADS);
+		glVertex2f(200.0,50.0);
+		glVertex2f(162.5,112.5);
+		glVertex2f(312.5,112.5);
+		glVertex2f(275.0,50.0);
+	glEnd();
+	glBegin(GL_QUADS);
+		glVertex2f(287.5,50.0);
+		glVertex2f(325.0,112.5);
+		glVertex2f(387.5,112.5);
+		glVertex2f(350.0,50.0);
+	glEnd();
+	// doors end 
+	
+	glColor3f(0.863, 0.863, 0.863);			//ufo body2 above the body1
+	glBegin(GL_QUADS);
+		glVertex2f(75.0,125.0);
+		glVertex2f(125.0,175.0);
+		glVertex2f(350.0,175.0);
+		glVertex2f(400.0,125.0);
+	glEnd();
+
+	//semicircle of the ufo
+	float PI = 3.14;
+	float x,y;
+	float radius=112.5;
+	float centerX=237.5, centerY=175.0;
+ float step=5.0;// How far is the next point i.e it should be small value
+ glLineWidth(1.5);
+ glColor3f(0.686, 0.933, 0.933);
+ glBegin(GL_POLYGON);
+ for(float angle=0.0f;angle<=180; angle+=step)
+ {
+    float rad  = PI*angle/180;
+   x  = centerX+radius*cos(rad);
+   y  = centerY+radius*sin(rad);
+   glVertex2f(x,y);
+
+}
+glEnd();
+
+	glColor3f(0.467, 0.533, 0.600);
+	glBegin(GL_POLYGON);
+		glVertex2f(125.0,25.0);
+		glVertex2f(75.0,-50.0);
+		glVertex2f(87.5,-50.0);
+		glVertex2f(137.5,25.0);
+	glEnd();
+	glColor3f(0.467, 0.533, 0.600);
+	glBegin(GL_POLYGON);
+		glVertex2f(350.0,25.0);
+		glVertex2f(400.0,-50.0);
+		glVertex2f(387.5,-50.0);
+		glVertex2f(337.5,25.0);
+	glEnd();
+
+	light1(125.0,150.0,12.5,20);
+	light1(162.5,150.0,12.5,20);
+	light1(200.0,150.0,12.5,20);
+	light1(237.5,150.0,12.5,20);
+	light1(275.5,150.0,12.5,20);
+	light1(312.5,150.0,12.5,20);
+	light1(350.0,150.0,12.5,20);
+
+
+	glFlush();
+	glutMouseFunc(mymouse);
+	
+	
+
+}
+
+void display5()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	//glClearColor(0.0,1.0,0.5,1.0);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+
+
+	glColor3f(0.196, 0.804, 0.196);		//grass on the earth.
+	glBegin(GL_POLYGON);
+		glVertex2f(0.0,0.0);
+		glVertex2f(1000.0,0.0);
+		glVertex2f(1000.0,300.0);
+		glVertex2f(0.0,300.0);
+	glEnd();
+
+	glColor3f(0.529, 0.808, 0.922);		//sky on the earth.
+	glBegin(GL_POLYGON);
+		glVertex2f(0.0,300.0);
+		glVertex2f(1000.0,300.0);
+		glVertex2f(1000.0,600.0);
+		glVertex2f(0.0,600.0);
+	glEnd();
+
+
+	//forest behind the ufo
+	glPushMatrix();
+	glTranslatef(-15.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(20.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(40.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(60.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(80.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(100.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(120.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(140.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(160.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(180.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(200.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(220.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(240.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(260.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(280.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(300.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(320.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(340.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(360.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(380.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(400.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(420.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(440.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(460.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(480.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(500.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(520.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(540.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(560.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(580.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(600.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(620.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(640.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(660.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(680.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(700.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(720.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(740.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(760.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(780.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(800.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+
+
+	//tree 1 start
+	//bushes
+	glPushMatrix();
+	glTranslatef(150.0,250.0,0.0);
+	glScalef(0.3,0.3,0.0);
+	glColor3f(0.0,1.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(0,300);
+		glVertex2f(100,400);
+		glVertex2f(40,400);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(150,500);
+		glVertex2f(90,500);
+		glVertex2f(200,600);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(300,500);
+		glVertex2f(250,500);
+		glVertex2f(350,400);
+		glVertex2f(300,400);
+		glVertex2f(350,300);
+	glEnd();
+
+	//stem
+		glColor3f(0.2,0.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(150,0);
+//		glColor3f(0.47,0.0,0.0);
+		glVertex2f(150,300);
+	glColor3f(0.57,0.0,0.0);
+		glVertex2f(200,300);
+	glColor3f(0.47,0.0,0.0);
+		glVertex2f(200,0);
+	glEnd();
+	glPopMatrix();
+	//tree 1 end
+
+
+	//tree 2 start
+	//bushes
+	glPushMatrix();
+	glTranslatef(650.0,250.0,0.0);
+	glScalef(0.3,0.3,0.0);
+	glColor3f(0.0,1.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(0,300);
+		glVertex2f(100,400);
+		glVertex2f(40,400);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(150,500);
+		glVertex2f(90,500);
+		glVertex2f(200,600);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(300,500);
+		glVertex2f(250,500);
+		glVertex2f(350,400);
+		glVertex2f(300,400);
+		glVertex2f(350,300);
+	glEnd();
+
+	//stem
+		glColor3f(0.2,0.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(150,0);
+//		glColor3f(0.47,0.0,0.0);
+		glVertex2f(150,300);
+	glColor3f(0.57,0.0,0.0);
+		glVertex2f(200,300);
+	glColor3f(0.47,0.0,0.0);
+		glVertex2f(200,0);
+	glEnd();
+	glPopMatrix();
+	//tree 2 end
+
+	
+
+    
+
+
+
+
+	glTranslated(150,100,0);
+	glColor3f(0.184, 0.310, 0.310); //ufo base 
+	glBegin(GL_POLYGON);
+		glVertex2f(125.0,25.0);
+		glVertex2f(125.0,37.5); 
+		glVertex2f(350.0,37.5);
+		glVertex2f(350.0,25.0);
+	glEnd();
+
+
+	glColor3f(0.502, 0.502, 0.502);			//ufo body1 above the base
+	glBegin(GL_QUADS);
+		glVertex2f(125.0,37.5);
+		glVertex2f(75.0,125.0);
+		glVertex2f(400.0,125.0);
+		glVertex2f(350.0,37.5);
+	glEnd();
+
+	//the doors with black color on the ufo
+	glColor3f(0.184, 0.310, 0.310);
+	glBegin(GL_QUADS);
+		glVertex2f(125.0,50.0);
+		glVertex2f(87.5,112.5);
+		glVertex2f(150.0,112.5);
+		glVertex2f(187.5,50.0);
+	glEnd();
+	glBegin(GL_QUADS);
+		glVertex2f(200.0,50.0);
+		glVertex2f(162.5,112.5);
+		glVertex2f(312.5,112.5);
+		glVertex2f(275.0,50.0);
+	glEnd();
+	glBegin(GL_QUADS);
+		glVertex2f(287.5,50.0);
+		glVertex2f(325.0,112.5);
+		glVertex2f(387.5,112.5);
+		glVertex2f(350.0,50.0);
+	glEnd();
+	// doors end 
+	
+	glColor3f(0.863, 0.863, 0.863);			//ufo body2 above the body1
+	glBegin(GL_QUADS);
+		glVertex2f(75.0,125.0);
+		glVertex2f(125.0,175.0);
+		glVertex2f(350.0,175.0);
+		glVertex2f(400.0,125.0);
+	glEnd();
+
+	//semicircle of the ufo
+	float PI = 3.14;
+	float x,y;
+	float radius=112.5;
+	float centerX=237.5, centerY=175.0;
+	float step=5.0;// How far is the next point i.e it should be small value
+	glLineWidth(1.5);
+	glColor3f(0.686, 0.933, 0.933);
+	glBegin(GL_POLYGON);
+	for(float angle=0.0f;angle<=180; angle+=step)
+	{
+		float rad  = PI*angle/180;
+		x  = centerX+radius*cos(rad);
+	    y  = centerY+radius*sin(rad);
+		glVertex2f(x,y);
+	}
+	glEnd();
+
+	glColor3f(0.467, 0.533, 0.600);		//legs of the ufo
+	glBegin(GL_POLYGON);
+		glVertex2f(125.0,25.0);
+		glVertex2f(75.0,-50.0);
+		glVertex2f(87.5,-50.0);
+		glVertex2f(137.5,25.0);
+	glEnd();
+
+	glColor3f(0.467, 0.533, 0.600);		//legs of the ufo
+	glBegin(GL_POLYGON);
+		glVertex2f(350.0,25.0);
+		glVertex2f(400.0,-50.0);
+		glVertex2f(387.5,-50.0);
+		glVertex2f(337.5,25.0);
+	glEnd();
+
+	glColor3f(0.753, 0.753, 0.753);		//door
+	glBegin(GL_POLYGON);
+		glVertex2f(197.0,25.0);
+        glVertex2f(160.0,-50.0);
+        glVertex2f(310.0,-50.0);
+        glVertex2f(277.0,25.0);
+	glEnd();
+
+	glColor3f(0.0,0.0,0.0);
+	glBegin(GL_LINES);				//steps
+		glVertex2f(195.0,15.0);		//step 1
+        glVertex2f(280.0,15.0);
+
+		glVertex2f(188.0,5.0);		//step 2
+        glVertex2f(285.0,5.0);
+
+		glVertex2f(183.0,-5.0);		//step 3
+        glVertex2f(290.0,-5.0);
+
+		glVertex2f(178.0,-15.0);	//step 4
+        glVertex2f(294.0,-15.0);
+
+		glVertex2f(172.0,-25.0);	//step 5
+        glVertex2f(298.0,-25.0);
+
+		glVertex2f(168.0,-35.0);	//step 6
+        glVertex2f(302.0,-35.0);
+
+		glVertex2f(163.0,-45.0);	//step 7
+        glVertex2f(305.0,-45.0);
+
+	glEnd();
+
+
+	light1(125.0,150.0,12.5,20);
+	light1(162.5,150.0,12.5,20);
+	light1(200.0,150.0,12.5,20);
+	light1(237.5,150.0,12.5,20);
+	light1(275.5,150.0,12.5,20);
+	light1(312.5,150.0,12.5,20);
+	light1(350.0,150.0,12.5,20);
+
+	glFlush();
+}
+
+void display6()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	//glClearColor(0.0,1.0,0.5,1.0);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+
+
+	glColor3f(0.196, 0.804, 0.196);		//grass on the earth.
+	glBegin(GL_POLYGON);
+		glVertex2f(0.0,0.0);
+		glVertex2f(1000.0,0.0);
+		glVertex2f(1000.0,300.0);
+		glVertex2f(0.0,300.0);
+	glEnd();
+
+	glColor3f(0.529, 0.808, 0.922);		//sky on the earth.
+	glBegin(GL_POLYGON);
+		glVertex2f(0.0,300.0);
+		glVertex2f(1000.0,300.0);
+		glVertex2f(1000.0,600.0);
+		glVertex2f(0.0,600.0);
+	glEnd();
+
+
+	//forest behind the ufo
+	glPushMatrix();
+	glTranslatef(-15.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(20.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(40.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(60.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(80.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(100.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(120.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(140.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(160.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(180.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(200.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(220.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(240.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(260.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(280.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(300.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(320.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(340.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(360.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(380.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(400.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(420.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(440.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(460.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(480.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(500.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(520.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(540.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(560.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(580.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(600.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(620.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(640.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(660.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(680.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(700.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(720.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(740.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(760.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(780.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(800.0,300.0,0.0);
+	glScalef(0.1,0.1,0.0);
+	tree();
+	glPopMatrix();
+
+
+	//tree 1 start
+	//bushes
+	glPushMatrix();
+	glTranslatef(150.0,250.0,0.0);
+	glScalef(0.3,0.3,0.0);
+	glColor3f(0.0,1.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(0,300);
+		glVertex2f(100,400);
+		glVertex2f(40,400);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(150,500);
+		glVertex2f(90,500);
+		glVertex2f(200,600);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(300,500);
+		glVertex2f(250,500);
+		glVertex2f(350,400);
+		glVertex2f(300,400);
+		glVertex2f(350,300);
+	glEnd();
+
+	//stem
+		glColor3f(0.2,0.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(150,0);
+//		glColor3f(0.47,0.0,0.0);
+		glVertex2f(150,300);
+	glColor3f(0.57,0.0,0.0);
+		glVertex2f(200,300);
+	glColor3f(0.47,0.0,0.0);
+		glVertex2f(200,0);
+	glEnd();
+	glPopMatrix();
+	//tree 1 end
+
+
+	//tree 2 start
+	//bushes
+	glPushMatrix();
+	glTranslatef(650.0,250.0,0.0);
+	glScalef(0.3,0.3,0.0);
+	glColor3f(0.0,1.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(0,300);
+		glVertex2f(100,400);
+		glVertex2f(40,400);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(150,500);
+		glVertex2f(90,500);
+		glVertex2f(200,600);
+	glColor3f(0.0,0.1,0.0);
+		glVertex2f(300,500);
+		glVertex2f(250,500);
+		glVertex2f(350,400);
+		glVertex2f(300,400);
+		glVertex2f(350,300);
+	glEnd();
+
+	//stem
+		glColor3f(0.2,0.0,0.0);
+	glBegin(GL_POLYGON);
+		glVertex2f(150,0);
+//		glColor3f(0.47,0.0,0.0);
+		glVertex2f(150,300);
+	glColor3f(0.57,0.0,0.0);
+		glVertex2f(200,300);
+	glColor3f(0.47,0.0,0.0);
+		glVertex2f(200,0);
+	glEnd();
+	glPopMatrix();
+	//tree 2 end
+
+	
+
+    
+
+
+
+
+	glTranslated(150,100,0);
+	glColor3f(0.184, 0.310, 0.310); //ufo base 
+	glBegin(GL_POLYGON);
+		glVertex2f(125.0,25.0);
+		glVertex2f(125.0,37.5); 
+		glVertex2f(350.0,37.5);
+		glVertex2f(350.0,25.0);
+	glEnd();
+
+
+	glColor3f(0.502, 0.502, 0.502);			//ufo body1 above the base
+	glBegin(GL_QUADS);
+		glVertex2f(125.0,37.5);
+		glVertex2f(75.0,125.0);
+		glVertex2f(400.0,125.0);
+		glVertex2f(350.0,37.5);
+	glEnd();
+
+	//the doors with black color on the ufo
+	glColor3f(0.184, 0.310, 0.310);
+	glBegin(GL_QUADS);
+		glVertex2f(125.0,50.0);
+		glVertex2f(87.5,112.5);
+		glVertex2f(150.0,112.5);
+		glVertex2f(187.5,50.0);
+	glEnd();
+	glBegin(GL_QUADS);
+		glVertex2f(200.0,50.0);
+		glVertex2f(162.5,112.5);
+		glVertex2f(312.5,112.5);
+		glVertex2f(275.0,50.0);
+	glEnd();
+	glBegin(GL_QUADS);
+		glVertex2f(287.5,50.0);
+		glVertex2f(325.0,112.5);
+		glVertex2f(387.5,112.5);
+		glVertex2f(350.0,50.0);
+	glEnd();
+	// doors end 
+	
+	glColor3f(0.863, 0.863, 0.863);			//ufo body2 above the body1
+	glBegin(GL_QUADS);
+		glVertex2f(75.0,125.0);
+		glVertex2f(125.0,175.0);
+		glVertex2f(350.0,175.0);
+		glVertex2f(400.0,125.0);
+	glEnd();
+
+	//semicircle of the ufo
+	float PI = 3.14;
+	float x,y;
+	float radius=112.5;
+	float centerX=237.5, centerY=175.0;
+ float step=5.0;// How far is the next point i.e it should be small value
+ glLineWidth(1.5);
+ glColor3f(0.686, 0.933, 0.933);
+ glBegin(GL_POLYGON);
+ for(float angle=0.0f;angle<=180; angle+=step)
+ {
+    float rad  = PI*angle/180;
+   x  = centerX+radius*cos(rad);
+   y  = centerY+radius*sin(rad);
+   glVertex2f(x,y);
+
+}
+glEnd();
+
+	glColor3f(0.467, 0.533, 0.600);
+	glBegin(GL_POLYGON);
+		glVertex2f(125.0,25.0);
+		glVertex2f(75.0,-50.0);
+		glVertex2f(87.5,-50.0);
+		glVertex2f(137.5,25.0);
+	glEnd();
+	glColor3f(0.467, 0.533, 0.600);
+	glBegin(GL_POLYGON);
+		glVertex2f(350.0,25.0);
+		glVertex2f(400.0,-50.0);
+		glVertex2f(387.5,-50.0);
+		glVertex2f(337.5,25.0);
+	glEnd();
+
+	glColor3f(0.753, 0.753, 0.753);		//door
+	glBegin(GL_POLYGON);
+		glVertex2f(197.0,25.0);
+        glVertex2f(160.0,-50.0);
+        glVertex2f(310.0,-50.0);
+        glVertex2f(277.0,25.0);
+	glEnd();
+
+	glColor3f(0.0,0.0,0.0);
+	glBegin(GL_LINES);				//steps
+		glVertex2f(195.0,15.0);		//step 1
+        glVertex2f(280.0,15.0);
+
+		glVertex2f(188.0,5.0);		//step 2
+        glVertex2f(285.0,5.0);
+
+		glVertex2f(183.0,-5.0);		//step 3
+        glVertex2f(290.0,-5.0);
+
+		glVertex2f(178.0,-15.0);	//step 4
+        glVertex2f(294.0,-15.0);
+
+		glVertex2f(172.0,-25.0);	//step 5
+        glVertex2f(298.0,-25.0);
+
+		glVertex2f(168.0,-35.0);	//step 6
+        glVertex2f(302.0,-35.0);
+
+		glVertex2f(163.0,-45.0);	//step 7
+        glVertex2f(305.0,-45.0);
+	glEnd();
+
+	light1(125.0,150.0,12.5,20);
+	light1(162.5,150.0,12.5,20);
+	light1(200.0,150.0,12.5,20);
+	light1(237.5,150.0,12.5,20);
+	light1(275.5,150.0,12.5,20);
+	light1(312.5,150.0,12.5,20);
+	light1(350.0,150.0,12.5,20);
+	
+	glPushMatrix();
+	glTranslatef(0.0,-60.0,0.0);
+	alien();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(-90.0,-30.0,0.0);
+	alien();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(190.0,0.0,0.0);
+	alien();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(230.0,-50.0,0.0);
+	alien();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(400.0,-60.0,0.0);
+	alien();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(440.0,30.0,0.0);
+	alien();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(560.0,0.0,0.0);
+	alien();
+	glPopMatrix();
+
+	
+
+
+
+	glFlush();
+
+}
+
+void alien()
+{
+	
+	glColor3f(0.0,1.0,1.0);		//alien body
+	glBegin(GL_POLYGON);
+		glVertex2f(30.0,50.0);
+		glVertex2f(30.0,25.0);
+		glVertex2f(40.0,25.0);
+		glVertex2f(40.0,50.0);
+		glVertex2f(35.0,45.0);
+	glEnd();
+
+	
+	glColor3f(1.0,1.0,1.0);			//alien head
+	glBegin(GL_POLYGON);
+		glVertex2f(20.0,60.0);
+		glVertex2f(35.0,45.0);
+		glVertex2f(50.0,60.0);
+		glVertex2f(40.0,70.0);
+		glVertex2f(30.0,70.0);
+	glEnd();
+
+	glColor3f(1.0,1.0,1.0);		//alien hands and legs
+	glLineWidth(3.0);
+	glBegin(GL_LINES);
+		glVertex2f(30.0,45.0);
+		glVertex2f(20.0,30.0);
+		glVertex2f(40.0,45.0);
+		glVertex2f(50.0,30.0);
+
+		glVertex2f(30.0,25.0);
+		glVertex2f(20.0,10.0);
+		glVertex2f(40.0,25.0);
+		glVertex2f(50.0,10.0);
+
+		glVertex2f(35.0,70.0);
+		glVertex2f(45.0,80.0);
+	glEnd();
+
+	glColor3f(0.0,0.0,0.0);
+	glPointSize(2.0);
+	glBegin(GL_POINTS);
+		glVertex2f(30.0,60.0);
+		glVertex2f(40.0,60.0);
+	glEnd();
+}
+
+
+void reshape (int w, int h) 
+{
+	glViewport (0, 0, (GLsizei)w, (GLsizei)h);
+	glMatrixMode (GL_PROJECTION);
+	glLoadIdentity ();
+	if(w<=h)
+		gluOrtho2D(0.0,2.0,0.0*(GLfloat)h/(GLfloat)w,499.0*(GLfloat)h/(GLfloat)w);
+	else
+		gluOrtho2D(0.0*(GLfloat)w/(GLfloat)h,499.0*(GLfloat)w/(GLfloat)h,0.0,499.0);
+	glMatrixMode (GL_MODELVIEW);
+	glutPostRedisplay();
+}
+
+void myinit()
+{
+	glClearColor(0.0f,0.0f,0.0f,1.0f);
+	glColor3f(1.0,0.0,0.0);
+	glPointSize(1.0);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(0.0,499.0,5.0,499.0);
+
+	printf("Press 'w' to move the UFO UP. \n");
+	printf("Press 's' to move the UFO DOWN. \n");
+	printf("Press 'a' to move the UFO LEFT. \n");
+	printf("Press 'd' to move the UFO RIGHT. \n");
+	printf("Press 'q' to move the UFO UP LEFT. \n");
+	printf("Press 'e' to move the UFO UP RIGHT. \n");
+	printf("Press 'c' to move the UFO DOWN RIGHT. \n");
+	printf("Press 'z' to move the UFO DOWN LEFT. \n");
+	
+
+}
+
+void setFont(void *font)
+{
+	currentfont=font;
+}
+
+void drawstring(float x,float y,float z,char *string)
+{
+	char *c;
+	glRasterPos3f(x,y,z);
+	for(c=string;*c!='\0';c++)
+	{ 
+		glColor3f(0.0,0.0,0.0);
+		glutBitmapCharacter(currentfont,*c);
+	}
+}
+void frontscreen(void)
+{
+	setFont(GLUT_BITMAP_TIMES_ROMAN_24);
+	glClearColor(0.0,0.0,0.0,1.0);/*background for cover page*/
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(1,0,0);
+	drawstring(160.0,450.0,0.0,"REVA INSTITUTE OF TECHNOLOGY AND MANAGEMENT");
+	glColor3f(1.7,0,1);
+	drawstring(150,350,0.0,"DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING");
+	glColor3f(1,0.5,0);
+	drawstring(300,320,0.0,"A MINI PROJECT ON");
+	glColor3f(1,0,1);
+	drawstring(110,280,0.0,"GRAPHICAL PRESENTATION ON ALIEN INVASION ON PLANET EARTH");
+	glColor3f(1,0,0);
+	drawstring(380,220,0.0,"BY:");
+	glColor3f(1,0,0);
+	drawstring(290,180,0.0,"Gagan K (1RE14CS034)");
+	glColor3f(1,0,0);
+	drawstring(290,140,0.0,"Ganesh M (1RE14CS035)");
+	glColor3f(1,0.5,0);
+	/*drawstring(980,400,0.0,"");
+	glColor3f(1,1,1);
+	drawstring(930,300,0.0,"");
+	glColor3f(1,1,1);
+	drawstring(930,240,0.0,"");*/
+	glColor3f(1,0.1,1);
+	drawstring(350,50,0.0,"PRESS 'P' ");
+	glFlush();
+}
+
+void frontscreen1(void)
+{
+	setFont(GLUT_BITMAP_TIMES_ROMAN_24);
+	glClearColor(0.0,0.0,0.0,1.0);/*background for cover page*/
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(1,0,0);
+	drawstring(350.0,450.0,0.0,"INSTRUCTIONS.");
+
+	glColor3f(1.7,0,1);
+	drawstring(50,400,0.0,"Press Keys for movement of the UFO :");
+
+	glColor3f(1,0.5,0);
+	drawstring(150,350,0.0,"'w' --> UP");
+
+	glColor3f(1,0.5,0);
+	drawstring(150,320,0.0,"'s' --> DOWN");
+	glColor3f(1,0.5,0);
+	drawstring(150,290,0.0,"'a' --> LEFT");
+	glColor3f(1,0.5,0);
+	drawstring(150,260,0.0,"'d' --> RIGHT");
+	glColor3f(1,0.5,0);
+	drawstring(150,230,0.0,"'q' --> UP LEFT");
+	glColor3f(1,0.5,0);
+	drawstring(150,200,0.0,"'e' --> UP RIGHT");
+	glColor3f(1,0.5,0);
+	drawstring(150,170,0.0,"'z' --> DOWN LEFT");
+	glColor3f(1,0.5,0);
+	drawstring(150,140,0.0,"'c' --> DOWN RIGHT");
+
+	glColor3f(1,0,1);
+	drawstring(480,400,0.0,"Click MOUSE buttons for :");
+
+	
+
+	glColor3f(1,0.5,0);
+	drawstring(500,350,0.0,"'LEFT' --> Open the door of UFO.");
+
+	glColor3f(1,0.5,0);
+	drawstring(500,320,0.0,"'RIGHT' --> Make Aliens come out.");
+
+	glColor3f(1,0.5,0);
+	/*drawstring(980,400,0.0,"");
+	glColor3f(1,1,1);
+	drawstring(930,300,0.0,"");
+	glColor3f(1,1,1);
+	drawstring(930,240,0.0,"");*/
+
+	glColor3f(1,0.1,1);
+	drawstring(330,50,0.0,"PRESS 'N' TO START");
+	glFlush();
+}
+
+void main(int argc, char** argv)
+{
+
+	printf("\n REVA INSTITUTE OF TECHNOLOGY.\n\n");
+	glutInit(&argc,argv);
+	glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
+	glutInitWindowSize(1000,600);
+	glutInitWindowPosition(0,0);
+	glutCreateWindow("Alien Invasion On Planet Earth.");
+	glutReshapeFunc(reshape);
+	glutDisplayFunc(display);
+	
+	glutKeyboardFunc(mykeys);
+	 
+	myinit();
+	glutMainLoop();
+}
